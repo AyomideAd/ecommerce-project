@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women's Fashion - SharpedgeStore</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/women.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+ 
+</head>
+<body>
+    <header class="header">
+        <div class="header-main">
+            <a href="index.html" class="logo">SharpedgeStore</a>
+            <div class="search-container">
+                <input type="search" placeholder="Search for products...">
+            </div>
+            <div class="header-actions">
+                <a href="account.html">Account</a>
+                <a href="wishlist.html">Wishlist</a>
+                <a href="cart.html">Cart (0)</a>
+            </div>
+        </div>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li><a href="newarrival.html">New Arrivals</a></li>
+                <li><a href="women.html">Women</a></li>
+                <li><a href="men.html">Men</a></li>
+                <li><a href="accessories.html">Accessories</a></li>
+                <li><a href="sales.html">Sale</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="category-header">
+        <div>
+            <h1>Women's Fashion</h1>
+            <p>Discover the latest trends in women's fashion</p>
+        </div>
+    </section>
+
+    <section class="filters">
+        <div class="filter-grid">
+            <div class="filter-section">
+                <label>Category</label>
+                <select id="categoryFilter">
+                    <option value="All Categories">All Categories</option>
+                    <option value="Dresses">Dresses</option>
+                    <option value="Tops">Tops</option>
+                    <option value="Pants">Pants</option>
+                    <option value="Skirts">Skirts</option>
+                </select>
+            </div>
+            <div class="filter-section">
+                <label>Size</label>
+                <select id="sizeFilter">
+                    <option value="All Sizes">All Sizes</option>
+                    <option value="XS">XS</option>
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+            </div>
+            <div class="filter-section">
+                <label>Price Range</label>
+                <select id="priceFilter">
+                    <option value="All Prices">All Prices</option>
+                    <option value="Under $50">Under $50</option>
+                    <option value="$50 - $100">$50 - $100</option>
+                    <option value="$100 - $200">$100 - $200</option>
+                    <option value="Over $200">Over $200</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <section class="products">
+        <div class="product-grid" id="productGrid">
+            <!-- Products will be dynamically inserted here -->
+        </div>
+    </section>
+    <footer class="newsletter">
+        <div class="newsletter-content">
+            <h2>Subscribe to our Newsletter</h2>
+            <p>Get 10% off your first order and stay updated with our latest arrivals.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Product data
+        const products = [
+            {
+                id: 1,
+                title: "Floral Summer Dress",
+                price: 89.99,
+                category: "Dresses",
+                size: ["XS", "S", "M", "L"],
+                image: "images/floral.jpg"
+            },
+            {
+                id: 2,
+                title: "Classic White Blouse",
+                price: 49.99,
+                category: "Tops",
+                size: ["S", "M", "L", "XL"],
+                image: "images/white-blouse.jpg"
+            },
+            {
+                id: 3,
+                title: "High-Waist Slim Jeans",
+                price: 79.99,
+                category: "Pants",
+                size: ["XS", "S", "M", "L", "XL"],
+                image: "images/slimwaist.jpg"
+            },
+            {
+                id: 4,
+                title: "Pleated Midi Skirt",
+                price: 69.99,
+                category: "Skirts",
+                size: ["S", "M", "L"],
+                image: "images/pleatedskirt.jpg"
+            },
+            {
+                id: 5,
+                title: "Evening Maxi Dress",
+                price: 159.99,
+                category: "Dresses",
+                size: ["M", "L", "XL"],
+                image: "images/maxidress.jpg"
+            },
+            {
+                id: 6,
+                title: "Silk Camisole Top",
+                price: 45.99,
+                category: "Tops",
+                size: ["XS", "S", "M"],
+                image: "images/camisoletop.jpg"
+            }
+        ];
+
+        // DOM elements
+        const productGrid = document.getElementById('productGrid');
+        const categoryFilter = document.getElementById('categoryFilter');
+        const sizeFilter = document.getElementById('sizeFilter');
+        const priceFilter = document.getElementById('priceFilter');
+
+        // Function to create product card HTML
+        function createProductCard(product) {
+            return `
+                <div class="product-card">
+                    <img src="${product.image}" alt="${product.title}" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">${product.title}</h3>
+                        <p class="product-price">$${product.price.toFixed(2)}</p>
+                        <div class="size-badges">
+                            ${product.size.map(size => `<span class="size-badge">${size}</span>`).join('')}
+                        </div>
+                        <button class="btn">Add to Cart</button>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Function to filter products
+        function filterProducts() {
+            const selectedCategory = categoryFilter.value;
+            const selectedSize = sizeFilter.value;
+            const selectedPrice = priceFilter.value;
+
+            const filteredProducts = products.filter(product => {
+                // Category filter
+                if (selectedCategory !== 'All Categories' && product.category !== selectedCategory) {
+                    return false;
+                }
+
+                // Size filter
+                if (selectedSize !== 'All Sizes' && !product.size.includes(selectedSize)) {
+                    return false;
+                }
+
+                // Price filter
+                if (selectedPrice !== 'All Prices') {
+                    const price = product.price;
+                    switch (selectedPrice) {
+                        case 'Under $50':
+                            if (price >= 50) return false;
+                            break;
+                        case '$50 - $100':
+                            if (price < 50 || price > 100) return false;
+                            break;
+                        case '$100 - $200':
+                            if (price < 100 || price > 200) return false;
+                            break;
+                        case 'Over $200':
+                            if (price <= 200) return false;
+                            break;
+                    }
+                }
+
+                return true;
+            });
+
+            // Update product grid
+            if (filteredProducts.length === 0) {
+                productGrid.innerHTML = '<div class="no-products">No products found matching your criteria.</div>';
+            } else {
+                productGrid.innerHTML = filteredProducts.map(product => createProductCard(product)).join('');
+            }
+        }
+
+        // Add event listeners to filters
+        categoryFilter.addEventListener('change', filterProducts);
+        sizeFilter.addEventListener('change', filterProducts);
+        priceFilter.addEventListener('change', filterProducts);
+
+        // Initial render
+        filterProducts();
+    </script>
+</body>
+</html>

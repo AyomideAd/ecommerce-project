@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mega Sale - SharpedgeStore</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/sale.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-main">
+            <a href="index.html" class="logo">SharpedgeStore</a>
+            <div class="search-container">
+                <input type="search" placeholder="Search for products...">
+            </div>
+            <div class="header-actions">
+                <a href="account.html">Account</a>
+                <a href="wishlist.html">Wishlist</a>
+                <a href="cart.html">Cart (0)</a>
+                <i class="fas fa-bars mobile-menu-icon" id="menuIcon"></i>
+            </div>
+        </div>
+        <nav class="nav">
+            <div class="mobile-nav" id="mobileNav">
+                <ul class="nav-list">
+                    <li><a href="newarrival.html">New Arrivals</a></li>
+                    <li><a href="women.html">Women</a></li>
+                    <li><a href="men.html">Men</a></li>
+                    <li><a href="accessories.html">Accessories</a></li>
+                    <li><a href="sales.html">Sale</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Flash Sale Banner -->
+    <section class="flash-sale-banner">
+        <div class="sale-content">
+            <h1>Flash Sale</h1>
+            <div class="countdown">
+                <div class="countdown-item">
+                    <span class="number" id="hours">24</span>
+                    <span class="label">Hours</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="number" id="minutes">00</span>
+                    <span class="label">Minutes</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="number" id="seconds">00</span>
+                    <span class="label">Seconds</span>
+                </div>
+            </div>
+            <p class="sale-description">Up to 70% Off on Premium Brands</p>
+        </div>
+    </section>
+
+    <!-- Deal Categories -->
+    <section class="deal-categories">
+        <h2>Shop by Deals</h2>
+        <div class="deals-grid">
+            <div class="deal-card">
+                <span class="discount-tag">70% OFF</span>
+                <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b" alt="Clearance">
+                <div class="deal-info">
+                    <h3>Clearance Sale</h3>
+                    <p>Last Chance to Buy</p>
+                    <a href="#" class="btn-shop">Shop Now</a>
+                </div>
+            </div>
+            <div class="deal-card">
+                <span class="discount-tag">50% OFF</span>
+                <img src="images/product2.jpg" alt="Seasonal">
+                <div class="deal-info">
+                    <h3>Season Special</h3>
+                    <p>Limited Time Offer</p>
+                    <a href="#" class="btn-shop">Shop Now</a>
+                </div>
+            </div>
+            <!-- Add more deal categories -->
+        </div>
+    </section>
+
+    <!-- Best Sellers on Sale -->
+    <section class="bestsellers-sale">
+        <h2>Best Sellers on Sale</h2>
+        <div class="products-grid">
+            <!-- Product 1 -->
+            <div class="product-card new-arrival">
+                <span class="new-tag">New</span>
+                <div class="product-image-container">
+                    <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105" alt="Designer Summer Dress">
+                    <div class="product-overlay">
+                        <button class="quick-view-btn" data-id="1">Quick View</button>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <h3>Designer Summer Dress</h3>
+                    <p class="price">$299.99</p>
+                    <div class="product-actions">
+                        <button class="btn-add-cart" data-id="1">Add to Cart</button>
+                        <button class="btn-wishlist" data-id="1"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Product 2 -->
+            <div class="product-card new-arrival">
+                <span class="new-tag">New</span>
+                <div class="product-image-container">
+                    <img src="https://images.unsplash.com/photo-1543076447-215ad9ba6923" alt="Luxury Watch">
+                    <div class="product-overlay">
+                        <button class="quick-view-btn" data-id="2">Quick View</button>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <h3>Luxury Watch Collection</h3>
+                    <p class="price">$599.99</p>
+                    <div class="product-actions">
+                        <button class="btn-add-cart" data-id="2">Add to Cart</button>
+                        <button class="btn-wishlist" data-id="2"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Continue with 8 more products similarly structured -->
+            <div class="product-card new-arrival">
+                <span class="new-tag">New</span>
+                <div class="product-image-container">
+                    <img src="https://images.unsplash.com/photo-1591561954557-26941169b49e" alt="Leather Handbag">
+                    <div class="product-overlay">
+                        <button class="quick-view-btn" data-id="3">Quick View</button>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <h3>Premium Leather Handbag</h3>
+                    <p class="price">$459.99</p>
+                    <div class="product-actions">
+                        <button class="btn-add-cart" data-id="3">Add to Cart</button>
+                        <button class="btn-wishlist" data-id="3"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Continue with more products... -->
+        </div>
+    </section>
+
+    <!-- Special Offers -->
+    <section class="special-offers">
+        <div class="offer-tabs">
+            <button class="tab-btn active">Buy 1 Get 1</button>
+            <button class="tab-btn">Bundle Deals</button>
+            <button class="tab-btn">Last Chance</button>
+        </div>
+        <div class="offer-content">
+            <!-- Offer products will be loaded here -->
+        </div>
+    </section>
+    <footer class="newsletter">
+        <div class="newsletter-content">
+            <h2>Subscribe to our Newsletter</h2>
+            <p>Get 10% off your first order and stay updated with our latest arrivals.</p>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Set the target date for the countdown (replace with your own date and time)
+            const targetDate = new Date("2024-12-31T23:59:59").getTime();
+    
+            // Update countdown every second
+            const countdownInterval = setInterval(() => {
+                const now = new Date().getTime();
+                const timeRemaining = targetDate - now;
+    
+                // Calculate hours, minutes, and seconds
+                const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+    
+                // Update the HTML
+                document.getElementById("hours").textContent = hours.toString().padStart(2, '0');
+                document.getElementById("minutes").textContent = minutes.toString().padStart(2, '0');
+                document.getElementById("seconds").textContent = seconds.toString().padStart(2, '0');
+    
+                // If the countdown is finished, clear the interval
+                if (timeRemaining < 0) {
+                    clearInterval(countdownInterval);
+                    document.getElementById("hours").textContent = "00";
+                    document.getElementById("minutes").textContent = "00";
+                    document.getElementById("seconds").textContent = "00";
+                    document.querySelector(".sale-description").textContent = "Flash Sale Ended!";
+                }
+            }, 1000);
+            
+            initializeWishlist();
+            initializeQuickView();
+            initializeAddToCart();
+            initializeFilterAndViewOptions();
+    
+            // Load saved wishlist state
+            const savedWishlist = JSON.parse(localStorage.getItem('wishlist') || '[]');
+            savedWishlist.forEach(productId => {
+                const button = document.querySelector(`.btn-wishlist[data-id="${productId}"]`);
+                if (button) {
+                    button.classList.add('active');
+                    button.querySelector('i').classList.replace('far', 'fas');
+                }
+            });
+        });
+    
+        // Wishlist functionality
+        function initializeWishlist() {
+            const wishlistButtons = document.querySelectorAll('.btn-wishlist');
+            wishlistButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const productId = this.dataset.id;
+                    this.classList.toggle('active');
+    
+                    const icon = this.querySelector('i');
+                    icon.classList.remove('far');
+                    icon.classList.add('fas', 'heart-beat');
+    
+                    setTimeout(() => {
+                        if (!this.classList.contains('active')) {
+                            icon.classList.remove('fas');
+                            icon.classList.add('far');
+                        }
+                        icon.classList.remove('heart-beat');
+                    }, 800);
+    
+                    updateWishlist(productId);
+                });
+            });
+        }
+    
+        // Quick View functionality
+        function initializeQuickView() {
+            const quickViewButtons = document.querySelectorAll('.quick-view-btn');
+            quickViewButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const productId = this.dataset.id;
+                    showQuickViewModal(productId);
+                });
+            });
+        }
+    
+        // Add to Cart functionality
+        function initializeAddToCart() {
+            const addToCartButtons = document.querySelectorAll('.btn-add-cart');
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const productId = this.dataset.id;
+                    const originalText = this.textContent;
+    
+                    this.textContent = 'Added!';
+                    this.style.backgroundColor = '#4CAF50';
+    
+                    setTimeout(() => {
+                        this.textContent = originalText;
+                        this.style.backgroundColor = '';
+                    }, 2000);
+    
+                    addToCart(productId);
+                });
+            });
+        }
+    
+        // Filter and View functionality
+        function initializeFilterAndViewOptions() {
+            const filterSelect = document.querySelector('#filterSelect');
+            const viewButtons = document.querySelectorAll('.view-buttons button');
+            const productGrid = document.querySelector('.products-grid');
+    
+            if (filterSelect) {
+                filterSelect.addEventListener('change', function() {
+                    const selectedValue = this.value;
+                    const products = [...document.querySelectorAll('.product-card')];
+    
+                    products.sort((a, b) => {
+                        const priceA = parseFloat(a.querySelector('.price').textContent.replace('$', ''));
+                        const priceB = parseFloat(b.querySelector('.price').textContent.replace('$', ''));
+    
+                        return selectedValue === 'Price: Low to High' ? priceA - priceB : priceB - priceA;
+                    });
+    
+                    productGrid.innerHTML = '';
+                    products.forEach(product => productGrid.appendChild(product));
+                });
+            }
+    
+            viewButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    viewButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+    
+                    productGrid.classList.toggle('list-view', this.classList.contains('fa-list'));
+                });
+            });
+        }
+    
+        // Helper functions
+        function updateWishlist(productId) {
+            let wishlist = JSON.parse(localStorage.getItem('wishlist') || '[]');
+            const index = wishlist.indexOf(productId);
+    
+            if (index === -1) {
+                wishlist.push(productId);
+            } else {
+                wishlist.splice(index, 1);
+            }
+    
+            localStorage.setItem('wishlist', JSON.stringify(wishlist));
+        }
+    
+        function addToCart(productId) {
+            let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+            cart.push(productId);
+            localStorage.setItem('cart', JSON.stringify(cart));
+    
+            const cartCount = document.querySelector('.header-actions a[href="cart.html"]');
+            cartCount.textContent = `Cart (${cart.length})`;
+        }
+    
+        function showQuickViewModal(productId) {
+            // Logic to show quick view modal for productId
+            alert(`Quick View for product ${productId}`);
+        }
+    </script>
+    
+</body>
+</html>

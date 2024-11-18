@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - SharpedgeStore</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/wishlist.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header included from main page -->
+     <!-- Header -->
+     <header class="header">
+        <div class="header-main">
+            <img src="images/sharpedge-logo.jpeg" alt="logo" class="img-logo">
+            <a href="index.html" class="logo" id="logo">SharpedgeStore</a>
+            <div class="search-container">
+                <input type="search" placeholder="Search for products...">
+            </div>
+            <div class="header-actions">
+                <a href="account.html">Account</a>
+                <a href="wishlist.html">Wishlist</a>
+                <a href="cart.html">Cart (0)</a>
+                <i class="fa-solid fa-sun" id="sunIcon" onclick="switchToDark()"></i>
+            </div>
+        </div>
+        
+        <nav class="nav">
+            <div class="mobile-nav" id="mobileNav">
+                <ul class="nav-list">
+                    <li><a href="newarrival.html">New Arrivals</a></li>
+                    <li><a href="women.html">Women</a></li>
+                    <li><a href="men.html">Men</a></li>
+                    <li><a href="accessories.html">Accessories</a></li>
+                    <li><a href="sales.html">Sale</a></li>
+                </ul>
+                
+            </div>
+        </nav>
+    </header>
+    <main class="cart-page">
+        <h1>Shopping Cart</h1>
+       
+        <div class="cart-container">
+            <div class="cart-items">
+                <!-- Cart items will be dynamically added here -->
+            </div>
+
+            <aside class="cart-summary">
+                <h2>Order Summary</h2>
+                <div class="summary-details">
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span id="subtotal">$0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Shipping</span>
+                        <span id="shipping">$0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Tax</span>
+                        <span id="tax">$0.00</span>
+                    </div>
+                    <div class="summary-row discount-row hidden">
+                        <span>Discount</span>
+                        <span id="discount">-$0.00</span>
+                    </div>
+                </div>
+
+                <div class="promo-code">
+                    <input type="text" placeholder="Enter promo code">
+                    <button class="btn-apply">Apply</button>
+                </div>
+
+                <div class="cart-total">
+                    <span>Total</span>
+                    <span id="total">$0.00</span>
+                </div>
+
+                <button class="btn-checkout">
+                    Proceed to Checkout
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+
+                <div class="payment-methods">
+                    <p>We Accept:</p>
+                    <div class="payment-icons">
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                        <i class="fab fa-cc-amex"></i>
+                        <i class="fab fa-cc-paypal"></i>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <section class="recommended-products">
+            <h2>You May Also Like</h2>
+            <div class="product-carousel">
+                <!-- Recommended products will be dynamically added here -->
+            </div>
+        </section>
+    </main>
+    <script src="js/wishlist.js"></script>
+</body>
+</html>

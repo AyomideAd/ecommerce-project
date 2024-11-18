@@ -1,0 +1,19 @@
+body {
+    background-color: black !important;
+}
+.header {
+    background-color: black;
+}
+:root {
+    --background-color: black;
+}
+
+.preloader {
+    background-color: black;
+}
+.nav {
+    background-color: black;
+}
+.products  {
+    background-color: black;
+}
